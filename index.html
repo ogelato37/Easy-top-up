@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyTopUp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="nav-bar">
+    <div class="logo">
+  <img src="IMG_1657.PNG" alt="">
+  <span>EasyTopUp</span>
+</div>
+    <nav class="nav-links" id="navLinks">
+      <ul>
+        <li><a class="active" href="#">GoodDeal</a></li>
+        <li><a href="bundles.html">Bundles</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a id="buy-btn" href="bundles.html">Buy Bundles</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><i class="fa fa-bars"></i> </button>
+   </header>
+
+   <section class="hero">
+     <div class="hero-section">
+       <h1>Buy data, airtime for all networks without charges</h1>
+       <p>You can buy data, airtime for all networks (CAMTEL, MTN, Orange, Yoomee) with your preferred payment method (Mobile Money, Orange Money) with no extra charge.</p>
+    <div class="button-grp">
+      <a href="bundles.html"><button class="buy-btn">Buy Bundles</button></a>
+      
+    </div>
+    </div>
+   </section>
+
+   
+<section class="how-it-works">
+  <div class="container">
+    <header class="how-head">
+      <h2>How it Works</h2>
+      <p class="subtitle">Quick, simple steps to buy airtime and bundles.</p>
+    </header>
+
+    <div class="steps">
+      <article class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Send an SMS</h3>
+          <p>Send us an SMS with the network and amount you want to top up.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Choose Payment</h3>
+          <p>Select your preferred payment method (Mobile Money, Orange Money, etc.).</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Receive Airtime</h3>
+          <p>We process the request and deliver the airtime instantly to your number.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="services">
+  <div class="container services-container">
+    <h2 class="services-title">Available Airtime & Networks</h2>
+    <p class="services-sub">Top up any network quickly — choose a provider below.</p>
+
+    <div class="services-grid" role="list">
+      <article class="service-card" role="listitem">
+        <div class="logo-wrap">
+          <img src="MTN Logo PNG Vector (SVG) Free Download.jpeg" alt="MTN logo">
+        </div>
+        <h3 class="service-name">MTN</h3>
+      </article>
+
+      <article class="service-card" role="listitem">
+        <div class="logo-wrap">
+          <img src="images (2).png" alt="Orange logo">
+        </div>
+        <h3 class="service-name">Orange</h3>
+      </article>
+
+      <article class="service-card" role="listitem">
+        <div class="logo-wrap">
+          <img src="images (1).png" alt="Nextel / Yoomee logo">
+        </div>
+        <h3 class="service-name">Yoomee</h3>
+      </article>
+
+      <article class="service-card" role="listitem">
+        <div class="logo-wrap">
+          <img src="images.png" alt="CAMTEL logo">
+        </div>
+        <h3 class="service-name">CAMTEL</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+   
+
+
+
+<footer>
+  <div class="site-footer container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="IMG_1657.PNG" alt="EasyTopUp logo" class="footer-logo">
+        <p class="brand-desc">Fast, simple and secure airtime &amp; data top-ups for all networks.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Getting Started">
+        <h4>Getting Started</h4>
+        <ul>
+          <li><a href="#">Buy airtime</a></li>
+          <li><a href="bundles.html">Bundles</a></li>
+          <li><a href="bundles.html">Buy Airtime</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-resources" aria-label="Resources">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </div>
+
+      <address class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><a href="mailto:tendongtheodore7@gmail.com">tendongtheodore7@gmail.com</a></p>
+        <p><a href="tel:+237677361682">+237 677-361-682</a></p>
+        <p>Buea, Cameroon</p>
+      </address>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 EasyTopUp. All rights reserved.</p>
+      <ul class="social" aria-hidden="false">
+        <li><a href="#" aria-label="Facebook">FB</a></li>
+        <li><a href="#" aria-label="Twitter">TW</a></li>
+        <li><a href="#" aria-label="Instagram">IG</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+ <script>
+ (function () {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (!hamburger || !navLinks) return;
+
+  
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay--nav';
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(overlay);
+
+  function setOpen(open) {
+    navLinks.classList.toggle('open', open);
+    overlay.classList.toggle('show', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', () => setOpen(!navLinks.classList.contains('open')));
+  overlay.addEventListener('click', () => setOpen(false));
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && navLinks.classList.contains('open')) setOpen(false);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) setOpen(false);
+  });
+})();
+</script>
+</body>
+</html>

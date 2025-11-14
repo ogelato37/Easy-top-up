@@ -1,0 +1,151 @@
+<!-- ...existing code... -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Data Bundles — EasyTopUp</title>
+  <link rel="stylesheet" href="bundles.css">
+</head>
+<body>
+  <header class="nav-bar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <img src="IMG_1657.PNG" alt="">
+        <span>EasyTopUp</span>
+      </div>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="bundles.html">Bundles</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="SignUp.html">Buy Airtime</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:84px;">
+    <section class="bundles-hero hero">
+      <div class="hero-section" style="grid-template-columns:1fr 300px;">
+        <div>
+          <h1>Data bundles for every network</h1>
+          <p>Instant delivery and secure payments for MTN, Orange, CAMTEL and Yoomee.</p>
+          <div class="button-grp">
+            <a class="buy-btn" href="SignUp.html">Buy Airtime</a>
+            <a class="buy-btn" href="bundles.html">Browse Bundles</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="bundles-panel" style="margin-top:20px;">
+      <div class="bundles-layout" id="bundlesLayout" style="display:grid; grid-template-columns: 260px 1fr; gap:20px;">
+        <aside class="bundles-sidebar" aria-labelledby="filters-heading" style="padding:12px;">
+          <h3 id="filters-heading">Search & Filter</h3>
+          <div class="filter-group" style="margin:12px 0;">
+            <input id="bundleSearch" type="search" placeholder="Search bundles, e.g. 1GB" />
+          </div>
+
+          <div class="networks" style="display:flex; flex-direction:column; gap:8px;">
+            <button class="filter-btn active" data-network="all">All</button>
+            <button class="filter-btn" data-network="MTN">MTN</button>
+            <button class="filter-btn" data-network="Orange">Orange</button>
+            <button class="filter-btn" data-network="CAMTEL">CAMTEL</button>
+            <button class="filter-btn" data-network="Yoomee">Yoomee</button>
+          </div>
+
+          <div style="margin-top:16px;">
+            <h4>Sort</h4>
+            <select id="sortBundles" style="width:100%; padding:8px; border-radius:6px;">
+              <option value="popular">Most popular</option>
+              <option value="price-asc">Price: low → high</option>
+              <option value="price-desc">Price: high → low</option>
+            </select>
+          </div>
+        </aside>
+
+        <div>
+          <div id="bundlesGrid" class="bundles-grid" style="display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:16px;">
+            <!-- cards rendered by bundles.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Purchase modal (opens when user clicks Buy on a bundle) -->
+  <div id="checkoutModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px;">
+        <div style="font-size:0.95rem; color:#374151;">Proceed to buy this bundle or cancel</div>
+        <a id="cancelRedirect" href="cancel.html" style="font-weight:700; color:#b91c1c; text-decoration:underline;">Cancel bundle</a>
+      </div>
+
+      <h3 style="margin-top:4px;">Buy bundle</h3>
+
+      <form id="checkoutForm">
+        <label style="display:block; margin-top:12px;">
+          Receiver phone number
+          <input name="receiver" id="receiverInput" type="tel" required placeholder="+2376XXXXXXXX">
+        </label>
+
+        <label style="display:block; margin-top:12px;">
+          Bundle selected
+          <div id="selectedBundle" class="selected-bundle-display"></div>
+        </label>
+
+        <label style="display:block; margin-top:12px;">
+          Payer phone number
+          <input name="payer" id="payerInput" type="tel" required placeholder="+2376XXXXXXXX">
+        </label>
+
+        <div class="modal-actions" style="margin-top:16px;">
+          <button type="submit" class="buy-btn" id="buyBundleBtn">Buy bundle</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <script src="bundles.js"></script>
+
+  <script>
+  (function () {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (!hamburger || !navLinks) return;
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay--nav';
+    document.body.appendChild(overlay);
+
+    function setOpen(open) {
+      navLinks.classList.toggle('open', open);
+      overlay.classList.toggle('show', open);
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', () => setOpen(!navLinks.classList.contains('open')));
+    overlay.addEventListener('click', () => setOpen(false));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900 && navLinks.classList.contains('open')) setOpen(false);
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) setOpen(false);
+    });
+  })();
+  </script>
+
+</body>
+</html>

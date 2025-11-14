@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Airtime & Data</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6 text-center text-2xl font-bold">
+    Buy Airtime & Data Bundles
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 container mx-auto p-6">
+    
+    <!-- Network Selector -->
+    <section class="mb-6">
+      <h2 class="text-lg font-semibold mb-2">Select Network</h2>
+      <div class="flex space-x-4">
+        <button class="network-btn flex-1 p-4 rounded-lg bg-white shadow hover:bg-blue-50" data-network="MTN">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/MTN_logo.svg/1200px-MTN_logo.svg.png" alt="MTN" class="h-8 mx-auto mb-2">
+          MTN
+        </button>
+        <button class="network-btn flex-1 p-4 rounded-lg bg-white shadow hover:bg-blue-50" data-network="Orange">
+          <img src="" alt="Orange" class="h-8 mx-auto mb-2">
+          Orange
+        </button>
+        <button class="network-btn flex-1 p-4 rounded-lg bg-white shadow hover:bg-blue-50" data-network="CAMTEL">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Camtel_logo.png/640px-Camtel_logo.png" alt="CAMTEL" class="h-8 mx-auto mb-2">
+          CAMTEL
+        </button>
+      </div>
+    </section>
+
+    <!-- Bundles List -->
+    <section class="mb-6">
+      <h2 class="text-lg font-semibold mb-2">Select Bundle</h2>
+      <div id="bundle-list" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Bundles will populate here dynamically -->
+      </div>
+    </section>
+
+    <!-- Phone Number & Payment -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-lg font-semibold mb-2">Enter Phone Number</h2>
+      <input type="text" id="phone" placeholder="e.g. 650123456" class="w-full p-3 border rounded mb-4">
+
+      <h2 class="text-lg font-semibold mb-2">Select Payment Method</h2>
+      <select id="payment-method" class="w-full p-3 border rounded mb-4">
+        <option value="momo">MTN MoMo</option>
+        <option value="orange">Orange Money</option>
+        <option value="card">Credit/Debit Card</option>
+      </select>
+
+      <button id="buy-btn" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 font-semibold">Buy Bundle</button>
+    </section>
+
+  </main>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-lg text-center shadow">
+      <h3 class="text-xl font-bold mb-4">Success!</h3>
+      <p>Your bundle has been successfully purchased.</p>
+      <button id="close-modal" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Close</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const bundles = {
+      MTN: [
+        { name: "500MB - 1 Day", price: 500 },
+        { name: "1GB - 3 Days", price: 1000 },
+        { name: "5GB - 7 Days", price: 3000 }
+      ],
+      Orange: [
+        { name: "500MB - 1 Day", price: 500 },
+        { name: "1GB - 3 Days", price: 1000 },
+        { name: "5GB - 7 Days", price: 3000 }
+      ],
+      CAMTEL: [
+        { name: "1GB - 1 Day", price: 700 },
+        { name: "3GB - 7 Days", price: 2000 },
+        { name: "10GB - 30 Days", price: 7000 }
+      ]
+    };
+
+    const networkButtons = document.querySelectorAll('.network-btn');
+    const bundleList = document.getElementById('bundle-list');
+    let selectedNetwork = null;
+    let selectedBundle = null;
+
+    networkButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedNetwork = btn.dataset.network;
+        displayBundles(selectedNetwork);
+      });
+    });
+
+    function displayBundles(network) {
+      bundleList.innerHTML = '';
+      bundles[network].forEach((bundle, idx) => {
+        const div = document.createElement('div');
+        div.className = 'p-4 bg-white rounded-lg shadow cursor-pointer hover:bg-blue-50';
+        div.innerHTML = `
+          <p class="font-semibold">${bundle.name}</p>
+          <p class="text-gray-600">${bundle.price} XAF</p>
+        `;
+        div.addEventListener('click', () => {
+          selectedBundle = bundle;
+          document.querySelectorAll('#bundle-list div').forEach(d => d.classList.remove('border-2', 'border-blue-600'));
+          div.classList.add('border-2', 'border-blue-600');
+        });
+        bundleList.appendChild(div);
+      });
+    }
+
+    document.getElementById('buy-btn').addEventListener('click', () => {
+      const phone = document.getElementById('phone').value;
+      const payment = document.getElementById('payment-method').value;
+
+      if (!selectedNetwork || !selectedBundle || !phone) {
+        alert('Please select a network, bundle, and enter phone number.');
+        return;
+      }
+
+      // Placeholder: here you would call your payment API (Zitopay/Reloadly)
+      console.log({ network: selectedNetwork, bundle: selectedBundle, phone, payment });
+
+      document.getElementById('success-modal').classList.remove('hidden');
+    });
+
+    document.getElementById('close-modal').addEventListener('click', () => {
+      document.getElementById('success-modal').classList.add('hidden');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.signUp-form {
+    line-height: 2.1;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+     align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 93vh;
+    padding: 20px 30px;
+}
+
+.signUp-form span {
+    color: lightseagreen;
+}
+
+h1 {
+    text-align: center;
+    color: green;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: green;
+    text-align: center;
+    font-size: 2em;
+    
+}
+
+p {
+    text-align: center;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    border: 1px solid green;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+}
+
+.sign-btn {
+    background-color: green;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    margin-top: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.sign-btn:hover {
+    background-color: darkgreen;
+}
+
+label {
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}   

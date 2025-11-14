@@ -1,0 +1,33 @@
+[
+  { "id": "mtn-100mb", "network": "MTN", "title": "100MB",  "size": "100MB",  "price": 100, "validity": "1 day",   "popular": 7,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-500mb", "network": "MTN", "title": "500MB",  "size": "600MB",  "price": 500, "validity": "7 days",  "popular": 9,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-1gb",   "network": "MTN", "title": "1GB",    "size": "1GB",    "price": 500, "validity": "30 days", "popular": 8,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-2gb",   "network": "MTN", "title": "2.5GB",    "size": "2.5GB",    "price": 1000, "validity": "30 days", "popular": 5,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-750",   "network": "MTN", "title": "750mb",    "size": "750mb",    "price": 1000, "validity": "7 days", "popular": 6,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-9.2gb",   "network": "MTN", "title": "9.2GB",    "size": "9.2GB",    "price": 8000, "validity": "30 days", "popular": 6,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-250mb",   "network": "MTN", "title": "250mb",    "size": "250mb",    "price": 250, "validity": "1 day", "popular": 6,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-3gb",   "network": "MTN", "title": "3GB",    "size": "3GB",    "price": 3000, "validity": "7 days", "popular": 6,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-250mb",   "network": "MTN", "title": "250mb",    "size": "250mb",    "price": 850, "validity": "30 days", "popular": 6,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-1.2gb",   "network": "MTN", "title": "1.2GB",    "size": "1.2GB",    "price": 2000, "validity": "30 days", "popular": 6,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+  { "id": "mtn-75gb",   "network": "MTN", "title": "75GB",    "size": "75GB",    "price": 40000, "validity": "30 days", "popular": 6,  "img": "MTN Logo PNG Vector (SVG) Free Download.jpeg" },
+
+
+  { "id": "orange-250mb", "network": "Orange", "title": "250MB", "size": "250MB", "price": 500, "validity": "3 days",  "popular": 6,  "img": "images (1).png" },
+  { "id": "orange-600mb",   "network": "Orange", "title": "600mb",   "size": "600mb",   "price": 520, "validity": "1 day", "popular": 8,  "img": "images (1).png" },
+  { "id": "orange-1.5gb",  "network": "Orange", "title": "1.5GB", "size": "1.5GB", "price": 4000, "validity": "30 days", "popular": 4, "img": "images (1).png" },
+  { "id": "orange-2gb",  "network": "Orange", "title": "2GB", "size": "2GB ", "price": 1000, "validity": "1 day", "popular": 4, "img": "images (1).png" },
+  { "id": "orange-175mb",  "network": "Orange", "title": "175MB", "size": "175MB", "price": 300, "validity": "3 days", "popular": 4, "img": "images (1).png" },
+  { "id": "orange-4.6GBB",  "network": "Orange", "title": "4.6GB", "size": "4.6GB", "price": 100, "validity": "30 days", "popular": 4, "img": "images (1).png" },
+  
+
+
+  { "id": "camtel-500mb", "network": "CAMTEL", "title": "500MB", "size": "500MB", "price": 240, "validity": "7 days",  "popular": 3,  "img": "images.png" },
+  { "id": "camtel-1gb",   "network": "CAMTEL", "title": "1GB",   "size": "1GB",   "price": 300, "validity": "30 days", "popular": 5,  "img": "images.png" },
+  { "id": "camtel-1gb",   "network": "CAMTEL", "title": "1GB",   "size": "1GB",   "price": 300, "validity": "30 days", "popular": 5,  "img": "images.png" },
+  { "id": "camtel-1gb",   "network": "CAMTEL", "title": "1GB",   "size": "1GB",   "price": 300, "validity": "30 days", "popular": 5,  "img": "images.png" },
+  { "id": "camtel-1gb",   "network": "CAMTEL", "title": "1GB",   "size": "1GB",   "price": 300, "validity": "30 days", "popular": 5,  "img": "images.png" },
+
+
+  { "id": "yoomee-50mb",  "network": "Yoomee", "title": "50MB",  "size": "50MB",  "price": 80,  "validity": "1 day",   "popular": 2,  "img": "images (2).png" },
+  { "id": "yoomee-300mb", "network": "Yoomee", "title": "300MB", "size": "300MB", "price": 200, "validity": "7 days",  "popular": 4,  "img": "images (2).png" }
+]
