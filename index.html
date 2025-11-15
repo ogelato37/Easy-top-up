@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyTopUp</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Smooth fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header class="nav-bar">
+
+<div id="loader">
+    <div class="loader-spinner"></div>
+    <p>Loading EasyTopUp...</p>
+</div>
+
+        <header class="nav-bar">
     <div class="logo">
-  <img src="" alt="">
+  
   <span>EasyTopUp</span>
 </div>
     <nav class="nav-links" id="navLinks">
@@ -20,22 +32,22 @@
         <li><a id="buy-btn" href="bundles.html">Buy Bundles</a></li>
       </ul>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><i class="fa fa-bars"></i> </button>
+   <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+   <div class="overlay--nav" id="navOverlay"></div>
    </header>
 
-   <section class="hero">
+
+    <section class="hero">
      <div class="hero-section">
        <h1>Buy data, airtime for all networks without charges</h1>
        <p>You can buy data, airtime for all networks (CAMTEL, MTN, Orange, Yoomee) with your preferred payment method (Mobile Money, Orange Money) with no extra charge.</p>
     <div class="button-grp">
       <a href="bundles.html"><button class="buy-btn">Buy Bundles</button></a>
-      
     </div>
     </div>
    </section>
 
-   
-<section class="how-it-works">
+   <section class="how-it-works">
   <div class="container">
     <header class="how-head">
       <h2>How it Works</h2>
@@ -70,7 +82,6 @@
   </div>
 </section>
 
-
 <section class="services">
   <div class="container services-container">
     <h2 class="services-title">Available Airtime & Networks</h2>
@@ -88,14 +99,14 @@
         <div class="logo-wrap">
           <img src="images (2).png" alt="Orange logo">
         </div>
-        <h3 class="service-name">Orange</h3>
+        <h3 class="service-name">Yoomee</h3>
       </article>
 
       <article class="service-card" role="listitem">
         <div class="logo-wrap">
           <img src="images (1).png" alt="Nextel / Yoomee logo">
         </div>
-        <h3 class="service-name">Yoomee</h3>
+        <h3 class="service-name">Orange</h3>
       </article>
 
       <article class="service-card" role="listitem">
@@ -107,11 +118,6 @@
     </div>
   </div>
 </section>
-
-
-   
-
-
 
 <footer>
   <div class="site-footer container">
@@ -126,23 +132,17 @@
         <ul>
           <li><a href="#">Buy airtime</a></li>
           <li><a href="bundles.html">Bundles</a></li>
-          <li><a href="bundles.html">Buy Airtime</a></li>
+         
         </ul>
       </nav>
 
       <div class="footer-resources" aria-label="Resources">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
+        
       </div>
 
       <address class="footer-contact">
         <h4>Contact Us</h4>
-        <p><a href="mailto:tendongtheodore7@gmail.com">tendongtheodore7@gmail.com</a></p>
+        <p><a href="mailto:tendongtheodore7@gmail.com">easytopup.business237@gmail.com</a></p>
         <p><a href="tel:+237677361682">+237 677-361-682</a></p>
         <p>Buea, Cameroon</p>
       </address>
@@ -158,36 +158,7 @@
     </div>
   </div>
 </footer>
- <script>
- (function () {
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  if (!hamburger || !navLinks) return;
 
-
-  const overlay = document.createElement('div');
-  overlay.className = 'overlay--nav';
-  overlay.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(overlay);
-
-  function setOpen(open) {
-    navLinks.classList.toggle('open', open);
-    overlay.classList.toggle('show', open);
-    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-
-  hamburger.addEventListener('click', () => setOpen(!navLinks.classList.contains('open')));
-  overlay.addEventListener('click', () => setOpen(false));
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900 && navLinks.classList.contains('open')) setOpen(false);
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navLinks.classList.contains('open')) setOpen(false);
-  });
-})();
-</script>
+    <script src="script.js"></script>
 </body>
 </html>

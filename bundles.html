@@ -1,77 +1,70 @@
-<!-- ...existing code... -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Data Bundles — EasyTopUp</title>
-  <link rel="stylesheet" href="bundles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyTopUp - Bundles</title>
+    <link rel="stylesheet" href="bun.css">
 </head>
 <body>
-   <header class="nav-bar">
+     <header class="nav-bar">
     <div class="logo">
-  <img src="" alt="">
+  
   <span>EasyTopUp</span>
 </div>
     <nav class="nav-links" id="navLinks">
       <ul>
-        <li><a class="active" href="#">GoodDeal</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="bundles.html">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a id="buy-btn" href="bundles.html">Buy Bundles</a></li>
       </ul>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><i class="fa fa-bars"></i> </button>
+   <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+   <div class="overlay--nav" id="navOverlay"></div>
    </header>
-  <main class="container" style="padding-top:84px;">
-    <section class="bundles-hero hero">
-      <div class="hero-section" style="grid-template-columns:1fr 300px;">
-        <div>
-          <h1>Data bundles for every network</h1>
-          <p>Instant delivery and secure payments for MTN, Orange, CAMTEL and Yoomee.</p>
-          <div class="button-grp">
-            <a class="buy-btn" href="#">Buy Airtime</a>
-          </div>
+
+       <section class="hero">
+     <div class="hero-section">
+       <h1>Data bundles for every network</h1>
+       <p>Instant delivery and secure payments for MTN, Orange, CAMTEL and Yoomee.</p>
+    <div class="button-grp">
+          <!-- fixed to open airtime modal -->
+          <a class="buy-btn" href="#" data-buy-airtime>Buy Airtime</a>
         </div>
-        <div class="hero-visual" aria-hidden="true"></div>
-      </div>
-    </section>
+    </div>
+    <div class="hero-visual" aria-hidden="true"></div>
+   </section>
 
-    <section class="bundles-panel" style="margin-top:20px;">
-      <div class="bundles-layout" id="bundlesLayout" style="display:grid; grid-template-columns: 260px 1fr; gap:20px;">
-        <aside class="bundles-sidebar" aria-labelledby="filters-heading" style="padding:12px;">
-          <h3 id="filters-heading">Search & Filter</h3>
-          <div class="filter-group" style="margin:12px 0;">
-            <input id="bundleSearch" type="search" placeholder="Search bundles, e.g. 1GB" />
-          </div>
 
-          <div class="networks" style="display:flex; flex-direction:column; gap:8px;">
-            <button class="filter-btn active" data-network="all">All</button>
-            <button class="filter-btn" data-network="MTN">MTN</button>
-            <button class="filter-btn" data-network="Orange">Orange</button>
-            <button class="filter-btn" data-network="CAMTEL">CAMTEL</button>
-            <button class="filter-btn" data-network="Yoomee">Yoomee</button>
-          </div>
+   <section class="bundles-panel">
+  <!-- SEARCH + FILTERS (ON TOP ON MOBILE) -->
+  <div class="mobile-controls">
+    <h3>Search & Filter</h3>
+    <input id="bundleSearch" type="search" placeholder="Search bundles, e.g. 1GB" />
+    <select id="sortBundles">
+      <option value="popular">Most popular</option>
+      <option value="price-asc">Price: low to high</option>
+      <option value="price-desc">Price: high to low</option>
+    </select>
+    <div class="filter-group">
+      <button class="filter-btn active" data-network="all">All</button>
+      <button class="filter-btn" data-network="MTN">MTN</button>
+      <button class="filter-btn" data-network="Orange">Orange</button>
+      <button class="filter-btn" data-network="CAMTEL">CAMTEL</button>
+      <button class="filter-btn" data-network="Yoomee">Yoomee</button>
+    </div>
+  </div>
 
-          <div style="margin-top:16px;">
-            <h4>Sort</h4>
-            <select id="sortBundles" style="width:100%; padding:8px; border-radius:6px;">
-              <option value="popular">Most popular</option>
-              <option value="price-asc">Price: low → high</option>
-              <option value="price-desc">Price: high → low</option>
-            </select>
-          </div>
-        </aside>
-
-        <div>
-          <div id="bundlesGrid" class="bundles-grid" style="display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:16px;">
-            <!-- cards rendered by bundles.js -->
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- GRID -->
+  <div class="bundles-grid" id="bundlesGrid">
+    <!-- JS fills this -->
+  </div>
+</section>
   </main>
 
-  <!-- Purchase modal (opens when user clicks Buy on a bundle) -->
+
+
+    <!-- Purchase modal (opens when user clicks Buy on a bundle) -->
   <div id="checkoutModal" class="modal" aria-hidden="true">
     <div class="modal-content">
       <button class="modal-close" id="closeModal" aria-label="Close">×</button>
@@ -107,38 +100,49 @@
   </div>
 
 
+<!-- ================== AIRTIME MODAL ================== -->
+<div id="airtimeModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" id="closeAirtimeModal" aria-label="Close">×</button>
+    <h3>Buy Airtime</h3>
 
+    <form id="airtimeForm">
+      <label style="display:block; margin-top:12px;">
+        Receiver phone number
+        <input id="airReceiver" type="tel" required placeholder="+2376XXXXXXXX">
+      </label>
 
- 
+      <label style="display:block; margin-top:12px;">
+        Amount (FCFA)
+        <input id="airAmount" type="number" required placeholder="100 - 50,000">
+      </label>
 
-  <script src="bundles.js"></script>
+      <label style="display:block; margin-top:12px;">
+        Payer phone number
+        <input id="airPayer" type="tel" required placeholder="+2376XXXXXXXX">
+      </label>
 
-  <script>
-  (function () {
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    if (!hamburger || !navLinks) return;
-    const overlay = document.createElement('div');
-    overlay.className = 'overlay--nav';
-    document.body.appendChild(overlay);
+      <div style="margin-top:12px;">
+        <strong>Select payment method</strong>
+      </div>
 
-    function setOpen(open) {
-      navLinks.classList.toggle('open', open);
-      overlay.classList.toggle('show', open);
-      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.body.style.overflow = open ? 'hidden' : '';
-    }
+      <label class="pay-option">
+        <input type="radio" name="paymentMethod" value="mtn">
+        MTN Mobile Money
+      </label>
 
-    hamburger.addEventListener('click', () => setOpen(!navLinks.classList.contains('open')));
-    overlay.addEventListener('click', () => setOpen(false));
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900 && navLinks.classList.contains('open')) setOpen(false);
-    });
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navLinks.classList.contains('open')) setOpen(false);
-    });
-  })();
-  </script>
+      <label class="pay-option">
+        <input type="radio" name="paymentMethod" value="orange">
+        Orange Money
+      </label>
 
+      <div class="modal-actions" style="margin-top:16px;">
+        <button type="submit" class="buy-btn">Buy Airtime</button>
+      </div>
+    </form>
+  </div>
+</div>
+   <script src="bundle.js"></script>
+   <script src="script.js"></script>
 </body>
 </html>
