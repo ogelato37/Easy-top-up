@@ -200,33 +200,6 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.service {
-     margin-top: 30px;
-}
-.service-provided h2{
-    text-align: center;
-    font-size: 3rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.available-service {
-   display: inline-block;
-   gap: 20px;
-   justify-content: space-between;
-}
-
-.img-box {
-    display: inline-block;
-    gap: 200px;
-}
-
-.img-box img {
-    width: 300px;
-    height: 250px;
-    margin: 4px;
-    border-radius: 10px;
-}
-
 
  /* Footer */
 

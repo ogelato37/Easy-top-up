@@ -8,28 +8,20 @@
   <link rel="stylesheet" href="bundles.css">
 </head>
 <body>
-  <header class="nav-bar">
-    <div class="container nav-inner">
-      <div class="logo">
-        <img src="IMG_1657.PNG" alt="">
-        <span>EasyTopUp</span>
-      </div>
-
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="bundles.html">Bundles</a></li>
-          <li><a href="#how-it-works">How it Works</a></li>
-          <li><a href="SignUp.html">Buy Airtime</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        
-      </div>
-    </div>
-  </header>
-
+   <header class="nav-bar">
+    <div class="logo">
+  <img src="" alt="">
+  <span>EasyTopUp</span>
+</div>
+    <nav class="nav-links" id="navLinks">
+      <ul>
+        <li><a class="active" href="#">GoodDeal</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a id="buy-btn" href="bundles.html">Buy Bundles</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><i class="fa fa-bars"></i> </button>
+   </header>
   <main class="container" style="padding-top:84px;">
     <section class="bundles-hero hero">
       <div class="hero-section" style="grid-template-columns:1fr 300px;">
@@ -37,8 +29,7 @@
           <h1>Data bundles for every network</h1>
           <p>Instant delivery and secure payments for MTN, Orange, CAMTEL and Yoomee.</p>
           <div class="button-grp">
-            <a class="buy-btn" href="SignUp.html">Buy Airtime</a>
-            <a class="buy-btn" href="bundles.html">Browse Bundles</a>
+            <a class="buy-btn" href="#">Buy Airtime</a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true"></div>
@@ -87,7 +78,7 @@
 
       <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px;">
         <div style="font-size:0.95rem; color:#374151;">Proceed to buy this bundle or cancel</div>
-        <a id="cancelRedirect" href="cancel.html" style="font-weight:700; color:#b91c1c; text-decoration:underline;">Cancel bundle</a>
+        <a id="cancelRedirect" href="bundles.html" style="font-weight:700; color:#b91c1c; text-decoration:underline;">Cancel bundle</a>
       </div>
 
       <h3 style="margin-top:4px;">Buy bundle</h3>
@@ -117,6 +108,8 @@
 
 
 
+
+ 
 
   <script src="bundles.js"></script>
 

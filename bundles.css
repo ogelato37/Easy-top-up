@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
 /* Sidebar */
 .bundles-sidebar {
   background: #ffffff;
@@ -193,6 +200,7 @@ a {
 @media (max-width:900px) {
   .bundles-layout { 
     grid-template-columns: 1fr !important; 
+    
 }
   .bundles-sidebar { 
     position:static; 
@@ -226,11 +234,13 @@ a {
   padding: 18px 40px;
   display: flex;
   align-items: center;
-  background: blue;
+  background: skyblue;
   justify-content: space-between;
   padding: 18px 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  border-radius: 10px;
   margin-bottom: 30px;
+  
   
 }
 
@@ -279,3 +289,17 @@ a {
     font-family: 'Poppins', sans-serif;
     font-size: 2.8rem;
 }
+
+.container p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.container h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+ 
