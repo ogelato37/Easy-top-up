@@ -228,3 +228,72 @@ body {
   .services-grid { grid-template-columns:1fr; }
   .logo-wrap { max-width:120px; height:64px; }
 }
+
+/* whatsapp-float.css — Animated, Mobile-First */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 62px;
+  height: 62px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: floatPulse 2.5s infinite;
+  border: 3px solid #fff;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float img {
+  width: 36px;
+  height: 36px;
+  filter: brightness(0) invert(1); /* Makes icon white */
+}
+
+/* Floating Animation */
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Optional: Show tooltip on hover (desktop only) */
+.whatsapp-float::after {
+  content: 'Chat with us!';
+  position: absolute;
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.whatsapp-float:hover::after {
+  opacity: 1;
+}
+
+/* Responsive: Smaller on very small screens */
+@media (max-width: 380px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .whatsapp-float img { width: 32px; height: 32px; }
+}

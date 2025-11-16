@@ -161,3 +161,38 @@ body {
   .bundle-card { padding:16px; }
   .modal-content { padding:22px; max-width:94%; }
 }
+
+
+
+/* Optional: Show tooltip on hover (desktop only) */
+.whatsapp-float::after {
+  content: 'Chat with us!';
+  position: absolute;
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.whatsapp-float:hover::after {
+  opacity: 1;
+}
+
+/* Responsive: Smaller on very small screens */
+@media (max-width: 380px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .whatsapp-float img { width: 32px; height: 32px; }
+}
